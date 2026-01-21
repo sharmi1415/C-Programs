@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <string.h>
+
+struct Vehicle {
+    char brand[20];
+    int speed;
+
+    void (*display)(struct Vehicle *);
+};
+
+void displayVehicle(struct Vehicle *v) {
+    printf("Vehicle Brand : %s\n", v->brand);
+    printf("Vehicle Speed : %d km/h\n", v->speed);
+}
+
+struct Car {
+    struct Vehicle vehicle;   
+    int numberOfDoors;        
+    char fuelType[10];       
+};
+
+void displayCar(struct Car *c) {
+    c->vehicle.display(&c->vehicle);
+    printf("Number of Doors : %d\n", c->numberOfDoors);
+    printf("Fuel Type       : %s\n", c->fuelType);
+}
+
+int main() {
+    struct Car myCar;
+    strcpy(myCar.vehicle.brand, "Toyota");
+    myCar.vehicle.speed = 180;
+    myCar.vehicle.display = displayVehicle;
+    myCar.numberOfDoors = 4;
+    strcpy(myCar.fuelType, "Petrol");
+    printf("Car Details:\n");
+    displayCar(&myCar);
+
+    return 0;
+}
