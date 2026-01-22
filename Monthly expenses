@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main() {
+    int expense[30], i, total = 0;
+
+    for (i = 0; i < 30; i++) {
+        scanf("%d", &expense[i]);
+        total += expense[i];
+    }
+
+    printf("Total monthly expense = %d", total);
+    return 0;
+}
