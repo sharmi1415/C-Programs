@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+struct Employee {
+    int id;
+    float salary;
+};
+
+int main() {
+    struct Employee e[50];
+    int n, i, id;
+
+    printf("Enter number of employees: ");
+    scanf("%d", &n);
+
+    for(i = 0; i < n; i++) {
+        printf("Enter ID and Salary: ");
+        scanf("%d %f", &e[i].id, &e[i].salary);
+    }
+
+    printf("Enter ID to update salary: ");
+    scanf("%d", &id);
+
+    for(i = 0; i < n; i++) {
+        if(e[i].id == id) {
+            printf("Enter new salary: ");
+            scanf("%f", &e[i].salary);
+            printf("Record Updated!\n");
+            printf("ID: %d Salary: %.2f\n", e[i].id, e[i].salary);
+            break;
+        }
+    }
+
+    return 0;
+}
