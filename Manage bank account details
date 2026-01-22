@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+struct bank {
+    int accNo;
+    char name[20];
+    float balance;
+};
+
+int main() {
+    struct bank b;
+
+    printf("Enter account number, name and balance: ");
+    scanf("%d %s %f", &b.accNo, b.name, &b.balance);
+
+    printf("Account No: %d\nName: %s\nBalance: %.2f",
+           b.accNo, b.name, b.balance);
+    return 0;
+}
