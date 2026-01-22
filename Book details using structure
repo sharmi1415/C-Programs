@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+struct Book {
+    int id;
+    char title[30];
+    float price;
+};
+
+int main() {
+    int i, n;
+    struct Book b[10];
+
+    printf("Enter number of books: ");
+    scanf("%d", &n);
+
+    for(i = 0; i < n; i++) {
+        printf("\nEnter Book ID: ");
+        scanf("%d", &b[i].id);
+        printf("Enter Title: ");
+        scanf("%s", b[i].title);
+        printf("Enter Price: ");
+        scanf("%f", &b[i].price);
+    }
+
+    printf("\n--- Book Details ---\n");
+    for(i = 0; i < n; i++) {
+        printf("ID: %d, Title: %s, Price: %.2f\n",
+               b[i].id, b[i].title, b[i].price);
+    }
+
+    return 0;
+}
