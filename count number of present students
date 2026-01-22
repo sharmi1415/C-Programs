@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main() {
+    int attendance[10], i, count = 0;
+
+    for (i = 0; i < 10; i++) {
+        scanf("%d", &attendance[i]);
+        if (attendance[i] == 1)
+            count++;
+    }
+
+    printf("Number of present students = %d", count);
+    return 0;
+}
